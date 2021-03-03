@@ -7,8 +7,6 @@
  * @module utils/dom/isnode
  */
 
-import { isElement } from 'lodash-es';
-
 /**
  * Checks if the object is a native DOM Node.
  *
