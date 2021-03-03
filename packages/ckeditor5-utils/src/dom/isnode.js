@@ -7,6 +7,8 @@
  * @module utils/dom/isnode
  */
 
+import { isElement } from 'lodash-es';
+
 /**
  * Checks if the object is a native DOM Node.
  *
@@ -15,11 +17,7 @@
  */
 export default function isNode( obj ) {
 	if ( obj ) {
-		if ( obj.defaultView ) {
-			return obj instanceof obj.defaultView.Document;
-		} else if ( obj.ownerDocument && obj.ownerDocument.defaultView ) {
-			return obj instanceof obj.ownerDocument.defaultView.Node;
-		}
+		return typeof obj === 'object' && obj.nodeType !== undefined;
 	}
 
 	return false;
